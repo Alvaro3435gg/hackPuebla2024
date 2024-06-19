@@ -6,7 +6,7 @@ app = Flask(__name__)
 CORS(app)  # Permitir solicitudes CORS desde cualquier origen
 
 # Configura tu cliente OpenAI
-client = OpenAI(api_key="aqui va un token")
+client = OpenAI(api_key="aqui va la api")
 
 @app.route('/get_response')
 def get_response():
@@ -15,7 +15,7 @@ def get_response():
         model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "responde unicamente con un si o con un no"},
-            {"role": "user", "content": "los arboles son plantas"}
+            {"role": "user", "content": "las papas son tuberculos"}
         ]
     )
     content = completion.choices[0].message.content
